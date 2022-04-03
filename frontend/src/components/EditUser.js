@@ -106,7 +106,7 @@ const EditUser = () => {
             )}
           </Modal>
         </div>
-        <div className="field">
+        <div className="field mt-2">
           <label className="label">Name</label>
           <input
             className="input"
@@ -116,40 +116,46 @@ const EditUser = () => {
             placeholder="Name"
           />
         </div>
-        <div className="field">
-          <label className="label">Sex</label>
-          <FormControl variant="standard" sx={{ minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">Sex</InputLabel>
-            <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              value={sex}
-              onChange={(e) => setSex(e.target.value)}
-              label="Sex"
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={"male"}>Male</MenuItem>
-              <MenuItem value={"female"}>Female</MenuItem>
-            </Select>
-          </FormControl>
-        </div>
-        <div className="field">
-          <label className="label">DOB</label>
-          <TextField
-            id="DOB"
-            label="Date of Birth"
-            type="date"
-            onChange={(e) => {
-              setDOB(e.target.value);
-            }}
-            value={DOB}
-            sx={{ width: 220 }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+
+        <div className="columns">
+          <div className="field column is-one-fifth">
+            <label className="label">Sex</label>
+            <FormControl variant="standard" sx={{ minWidth: 120 }}>
+              <InputLabel id="demo-simple-select-standard-label">
+                Sex
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-standard-label"
+                id="demo-simple-select-standard"
+                value={sex}
+                onChange={(e) => setSex(e.target.value)}
+                label="Sex"
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={"male"}>Male</MenuItem>
+                <MenuItem value={"female"}>Female</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+
+          <div className="field column is-one-fifth">
+            <label className="label">DOB</label>
+            <TextField
+              id="DOB"
+              label="Date of Birth"
+              type="date"
+              onChange={(e) => {
+                setDOB(e.target.value);
+              }}
+              value={DOB}
+              sx={{ width: 220 }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </div>
         </div>
         <div className="field">
           <label className="label">Address</label>

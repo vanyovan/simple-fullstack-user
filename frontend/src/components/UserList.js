@@ -62,7 +62,6 @@ const UserList = () => {
   };
 
   const deleteUser = async (id) => {
-    console.log("ID", id);
     await axios.delete(`http://localhost:5000/users/deleteUser/${id}`);
     getUser();
   };
@@ -88,47 +87,6 @@ const UserList = () => {
           placeholder="Search"
         />
       </div>
-      {/* <table className="table is-striped is-fullwidth">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th onClick={sort}>Name</th>
-            <th>Sex</th>
-            <th>DOB</th>
-            <th>Address</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={user.id}>
-              <th className="has-text-weight-normal">{index + 1}</th>
-              <th className="has-text-weight-normal">{user.name}</th>
-              <th className="has-text-weight-normal">{user.sex}</th>
-              <th className="has-text-weight-normal">{user.DOB}</th>
-              <th className="has-text-weight-normal">{user.address}</th>
-              <th className="has-text-weight-normal">{user.email}</th>
-              <th className="has-text-weight-normal">{user.role}</th>
-              <th>
-                <Link
-                  to={`/edit/${user.id}`}
-                  className="button is-small is-info"
-                >
-                  Edit
-                </Link>
-                <button
-                  onClick={() => deleteUser(user.id)}
-                  className="button is-small is-danger"
-                >
-                  Delete
-                </button>
-              </th>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid
           rows={users}
